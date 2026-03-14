@@ -45,7 +45,6 @@ FROM deps AS dev
 
 ENV NODE_ENV=development
 COPY . .
-USER node
 CMD ["pnpm", "dev"]
 
 ################################
