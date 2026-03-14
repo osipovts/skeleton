@@ -4,34 +4,40 @@ A simple "Hello World" template with TypeScript, Docker, and ESLint pre-configur
 
 # Usage
 
-Please run `pnpm up` to update dev-dependencies (eslint, ts-node-dev, and others).
-
 Use this repository as a template for your project by copying with [github](https://github.com)'s UI or manually with `git clone`.
 
-## With github.com UI
+It is recommended to run `pnpm up` to update dev-dependencies (eslint, ts-node-dev, etc.) after copying this template.
 
-Please refer to [this page](https://docs.github.com/ru/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template) for details
+## Copy with github.com UI
 
-## Manually
+Please refer to [this page](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template) for details.
+
+## Copy manually
 
 ```sh
 git clone https://github.com/osipovts/skeleton.git
-mv -R skeleton my_project
+mv skeleton my_project
 cd my_project
 git remote remove origin
-git remote add origin <YOUR REPO URL>
+git remote add origin <YOUR_REPO_URL>
 git push -u origin --all
 git push -u origin --tags
 ```
 
 # Run
 
-- `pnpm build && pnpm start`: Compile TypeScript to JavaScript and run app
+- `pnpm build && pnpm start`: Compile TypeScript to JavaScript and run the app
 - `pnpm dev`: Run in "watch mode" for development
 - `pnpm lint`: Run ESLint to check code style
-- `pnpm lint:fix`: Allow ESLint to fix code
+- `pnpm lint:fix`: Automatically fix code style issues
 
 # Docker
 
-- `docker compose -f docker-compose.dev.yml up`: Run in dev-mode
-- `docker compose -f docker-composeprod.yml up`: Run in prod-mode
+- `docker compose up app-dev --build`: Run in dev mode
+- `docker compose up app-prod --build`: Run in prod mode
+
+## Notes
+1. Using `pnpm fetch` cache stage: offline installation (`--offline` flag) ensures build reliability and speed using cached layers.
+2. Using distroless image in production to minimize image size.
+3. Using non-root user to improve security.
+4. Anonymous volume in dev mode prevents host OS from overwriting container `node_modules`.
