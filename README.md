@@ -20,7 +20,7 @@ mv -R skeleton my_project
 cd my_project
 git remote remove origin
 git remote add origin <YOUR REPO URL>
-git push -u origin -all
+git push -u origin --all
 git push -u origin --tags
 ```
 
