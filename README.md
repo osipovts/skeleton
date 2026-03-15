@@ -6,7 +6,7 @@ A simple "Hello World" template with TypeScript, Docker, and ESLint pre-configur
 
 Use this repository as a template for your project by copying with [github](https://github.com)'s UI or manually with `git clone`.
 
-It is recommended to run `pnpm up` to update dev-dependencies (eslint, ts-node-dev, etc.) after copying this template.
+It is recommended to run `pnpm up` to update dev-dependencies (eslint, tsx, etc.) after copying this template.
 
 ## Copy with github.com UI
 
